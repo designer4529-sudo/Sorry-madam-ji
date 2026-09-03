@@ -28,13 +28,978 @@ body{
     linear-gradient(135deg,#fff8fa,#ffe5ed,#fff);
 }
 
-/* Background */
+/* BACKGROUND */
 
 .bg{
   position:fixed;
   inset:0;
   overflow:hidden;
   pointer-events:none;
+  z-index:-1;
+}
+
+.ball{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(70px);
+  opacity:.55;
+}
+
+.b1{
+  width:300px;
+  height:300px;
+  background:#ffabc4;
+  left:-100px;
+  top:5%;
+}
+
+.b2{
+  width:350px;
+  height:350px;
+  background:#ffd0df;
+  right:-120px;
+  top:45%;
+}
+
+.b3{
+  width:250px;
+  height:250px;
+  background:#ffbfd3;
+  left:35%;
+  bottom:-100px;
+}
+
+/* MUSIC */
+
+.music{
+  position:fixed;
+  right:18px;
+  top:18px;
+  z-index:100;
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  border:1px solid #9f294830;
+  background:#ffffffc7;
+  color:#9f2948;
+  font-size:19px;
+  cursor:pointer;
+  backdrop-filter:blur(12px);
+}
+
+/* SECTIONS */
+
+section{
+  min-height:100vh;
+  padding:80px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.container{
+  width:min(1000px,100%);
+  margin:auto;
+}
+
+/* HERO */
+
+.hero{
+  text-align:center;
+}
+
+.hero-inner{
+  max-width:760px;
+  margin:auto;
+}
+
+.tag{
+  display:inline-block;
+  padding:8px 17px;
+  border-radius:50px;
+  background:#ffffff9e;
+  color:#9f2948;
+  border:1px solid #9f294820;
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:25px;
+}
+
+h1,h2,.name{
+  font-family:"Cormorant Garamond",serif;
+}
+
+h1{
+  font-size:clamp(55px,11vw,105px);
+  line-height:.9;
+  margin-bottom:30px;
+}
+
+h2{
+  font-size:clamp(43px,7vw,72px);
+  line-height:1;
+  margin-bottom:25px;
+}
+
+.subtitle{
+  max-width:680px;
+  margin:auto;
+  font-size:18px;
+  line-height:1.9;
+  color:#684550;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 25px;
+  margin-top:32px;
+  border:0;
+  border-radius:50px;
+  background:#9f2948;
+  color:white;
+  font-family:Poppins,sans-serif;
+  cursor:pointer;
+  text-decoration:none;
+  font-size:14px;
+  box-shadow:0 12px 30px #9f294844;
+  transition:.25s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+.secondary{
+  background:#ffffffb8;
+  color:#9f2948;
+  border:1px solid #9f29482c;
+  box-shadow:none;
+}
+
+/* GLASS */
+
+.glass{
+  background:#ffffffa3;
+  border:1px solid #ffffffcc;
+  border-radius:30px;
+  padding:42px;
+  backdrop-filter:blur(18px);
+  box-shadow:
+    0 25px 70px #6423371d,
+    inset 0 1px #ffffff;
+}
+
+.message{
+  max-width:800px;
+  margin:auto;
+}
+
+.message p{
+  color:#64434e;
+  font-size:16px;
+  line-height:2;
+  margin-bottom:17px;
+}
+
+.quote{
+  margin-top:25px;
+  padding:22px;
+  border-left:3px solid #9f2948;
+  border-radius:0 18px 18px 0;
+  background:#ffffff55;
+  font-family:"Cormorant Garamond",serif;
+  font-size:25px;
+  line-height:1.5;
+}
+
+/* NAME */
+
+.name-section{
+  text-align:center;
+}
+
+.name{
+  font-size:clamp(75px,15vw,155px);
+  color:#9f2948;
+  line-height:.8;
+  margin:35px 0 45px;
+  animation:pulse 3s infinite ease-in-out;
+}
+
+@keyframes pulse{
+  50%{
+    transform:scale(1.025);
+  }
+}
+
+.name-message{
+  max-width:700px;
+  margin:auto;
+  font-size:18px;
+  line-height:2;
+  color:#684550;
+}
+
+/* MEMORIES */
+
+.center{
+  text-align:center;
+}
+
+.memories{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-top:40px;
+}
+
+.memory{
+  overflow:hidden;
+  padding:0;
+  transition:.3s;
+}
+
+.memory:hover{
+  transform:translateY(-6px);
+}
+
+.memory-img{
+  height:250px;
+  background:linear-gradient(135deg,#f7b5ca,#fff0f5);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#9f6072;
+}
+
+.memory-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.caption{
+  padding:21px;
+  color:#684550;
+  font-size:14px;
+  line-height:1.7;
+}
+
+/* POINTS */
+
+.points{
+  display:grid;
+  gap:14px;
+  margin-top:30px;
+}
+
+.point{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  padding:17px;
+  background:#ffffff70;
+  border-radius:18px;
+}
+
+.check{
+  width:30px;
+  height:30px;
+  min-width:30px;
+  border-radius:50%;
+  background:#ffe0e9;
+  color:#9f2948;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.point p{
+  font-size:14px;
+  line-height:1.7;
+}
+
+/* FINAL */
+
+.final{
+  text-align:center;
+}
+
+.final h2{
+  font-size:clamp(55px,10vw,100px);
+}
+
+.final-text{
+  max-width:650px;
+  margin:auto;
+  color:#684550;
+  line-height:1.9;
+}
+
+.buttons{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+}
+
+.response{
+  max-width:650px;
+  margin:30px auto 0;
+  padding:25px;
+  background:#ffffffbd;
+  border:1px solid #9f294822;
+  border-radius:22px;
+  display:none;
+}
+
+.response.show{
+  display:block;
+  animation:appear .5s ease;
+}
+
+.response h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:31px;
+  margin-bottom:8px;
+}
+
+.response p{
+  color:#684550;
+  line-height:1.7;
+}
+
+@keyframes appear{
+  from{
+    opacity:0;
+    transform:translateY(15px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* HEARTS */
+
+.heart{
+  position:fixed;
+  bottom:-30px;
+  pointer-events:none;
+  opacity:.45;
+  animation:float 9s linear forwards;
+  z-index:2;
+}
+
+@keyframes float{
+  15%{
+    opacity:.45;
+  }
+
+  100%{
+    transform:translateY(-110vh) rotate(30deg);
+    opacity:0;
+  }
+}
+
+/* REVEAL */
+
+.reveal{
+  opacity:0;
+  transform:translateY(35px);
+  transition:.8s;
+}
+
+.reveal.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+  padding:30px 20px 45px;
+  color:#91616e;
+  font-size:13px;
+}
+
+footer span{
+  color:#9f2948;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+  section{
+    padding:70px 15px;
+  }
+
+  .glass{
+    padding:28px 20px;
+    border-radius:24px;
+  }
+
+  .memories{
+    grid-template-columns:1fr;
+  }
+
+  .memory-img{
+    height:230px;
+  }
+
+  .buttons{
+    flex-direction:column;
+    max-width:350px;
+    margin:auto;
+  }
+
+  .btn{
+    width:100%;
+  }
+
+  .name{
+    font-size:78px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg">
+  <div class="ball b1"></div>
+  <div class="ball b2"></div>
+  <div class="ball b3"></div>
+</div>
+
+<!-- MUSIC -->
+<audio id="music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music" onclick="toggleMusic()" id="musicBtn">
+  ♪
+</button>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-inner reveal">
+
+    <div class="tag">
+      A little message from my heart
+    </div>
+
+    <h1>
+      Hemadri…<br>
+      ek minute please ❤️
+    </h1>
+
+    <p class="subtitle">
+      Mujhe pata hai maine tumhe hurt kiya hai.
+      Is baar mere paas excuses nahi hain…
+      sirf ek dil se sorry hai.
+    </p>
+
+    <a href="#mistake" class="btn">
+      Meri baat sunogi? →
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- MERI GALTI -->
+
+<section id="mistake">
+
+  <div class="container">
+
+    <div class="glass message reveal">
+
+      <div class="tag">
+        01 — Meri Galti
+      </div>
+
+      <h2>
+        Maine galat kiya.
+      </h2>
+
+      <p>
+        Maine gusse mein tumhe ulta-seedha bola.
+        Jo maine kaha, woh galat tha.
+      </p>
+
+      <p>
+        Main ye justify nahi karunga ki main gusse mein tha,
+        kyunki gussa meri galti ko sahi nahi bana deta.
+      </p>
+
+      <p>
+        Mujhe samajhna chahiye tha ki mere words tumhe
+        kitna hurt kar sakte hain.
+        Mujhe rukna chahiye tha, sochna chahiye tha
+        aur phir baat karni chahiye thi.
+      </p>
+
+      <div class="quote">
+        “Sorry sirf ek word nahi hai.
+        Galti samajhna aur usse repeat na karna bhi
+        uska part hai.”
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- I'M SORRY -->
+
+<section>
+
+  <div class="container">
+
+    <div class="name-section reveal">
+
+      <div class="tag">
+        02 — I'm Sorry
+      </div>
+
+      <div class="name">
+        Hemadri
+      </div>
+
+      <p class="name-message">
+        I'm genuinely sorry.
+        Tumhe hurt karna mera intention nahi tha,
+        lekin meri baaton se tum hurt hui —
+        aur uski responsibility meri hai.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- MEMORIES -->
+
+<section>
+
+  <div class="container">
+
+    <div class="center reveal">
+
+      <div class="tag">
+        03 — Our Memories
+      </div>
+
+      <h2>
+        Good moments deserve a place too ❤️
+      </h2>
+
+      <p class="subtitle">
+        Kuch moments jo mere liye special hain.
+      </p>
+
+    </div>
+
+
+    <div class="memories">
+
+
+      <!-- MEMORY 1 -->
+
+      <div class="memory glass reveal">
+
+        <div class="memory-img">
+
+          <img src="memory1.jpg" alt="Memory 1">
+
+        </div>
+
+        <div class="caption">
+          Ye moment mujhe hamesha yaad rahega ❤️
+        </div>
+
+      </div>
+
+
+      <!-- MEMORY 2 -->
+
+      <div class="memory glass reveal">
+
+        <div class="memory-img">
+
+          <img src="memory2.png" alt="Memory 2">
+
+        </div>
+
+        <div class="caption">
+          Tumhare saath bitaya har achha moment special hai.
+        </div>
+
+      </div>
+
+
+      <!-- MEMORY 3 -->
+
+      <div class="memory glass reveal">
+
+        <div class="memory-img">
+
+          <img src="memory3.png" alt="Memory 3">
+
+        </div>
+
+        <div class="caption">
+          I don't want one bad moment to erase
+          all the good ones.
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- MAIN KYA CHAHTA HU -->
+
+<section>
+
+  <div class="container">
+
+    <div class="glass message reveal">
+
+      <div class="tag">
+        04 — Main Kya Chahta Hu
+      </div>
+
+      <h2>
+        No pressure.
+      </h2>
+
+      <p>
+        Main tumse turant reply ya maafi demand nahi kar raha.
+      </p>
+
+      <p>
+        Agar tumhe thoda time chahiye, main samajhunga.
+        Tumhari feelings aur tumhari space important hai.
+      </p>
+
+
+      <div class="points">
+
+        <div class="point">
+
+          <div class="check">
+            ✓
+          </div>
+
+          <p>
+            Main apni galti ko excuse nahi banaunga.
+          </p>
+
+        </div>
+
+
+        <div class="point">
+
+          <div class="check">
+            ✓
+          </div>
+
+          <p>
+            Main tumhe reply ke liye force nahi karunga.
+          </p>
+
+        </div>
+
+
+        <div class="point">
+
+          <div class="check">
+            ✓
+          </div>
+
+          <p>
+            Bas itna chahta hu ki tumhe pata ho ki
+            mujhe apni galti ka genuinely regret hai.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section>
+
+  <div class="container">
+
+    <div class="final reveal">
+
+      <div class="tag">
+        05 — From My Heart
+      </div>
+
+      <h2>
+        Hemadri,<br>
+        I'm Sorry. ❤️
+      </h2>
+
+      <p class="final-text">
+
+        Agar kabhi tum ready ho,
+        mujhe ek chance dena apni galti sudharne ka.
+        Main sirf words se nahi,
+        apne actions se better karne ki koshish karunga.
+
+      </p>
+
+
+      <div class="buttons">
+
+        <button class="btn" onclick="forgive()">
+          I forgive you ❤️
+        </button>
+
+        <button class="btn secondary" onclick="space()">
+          Mujhe thoda time chahiye
+        </button>
+
+      </div>
+
+
+      <div class="response" id="response">
+
+        <h3 id="responseTitle"></h3>
+
+        <p id="responseText"></p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<footer>
+  Made with a sorry <span>❤️</span>
+</footer>
+
+
+<script>
+
+/* MUSIC */
+
+const music =
+document.getElementById("music");
+
+const musicBtn =
+document.getElementById("musicBtn");
+
+let playing = false;
+
+function toggleMusic(){
+
+  if(!playing){
+
+    music.play()
+      .then(()=>{
+
+        playing = true;
+        musicBtn.innerHTML = "❚❚";
+
+      })
+      .catch(()=>{
+
+        alert(
+          "music.mp3 ko index.html ke same folder mein rakho."
+        );
+
+      });
+
+  }else{
+
+    music.pause();
+
+    playing = false;
+    musicBtn.innerHTML = "♪";
+
+  }
+
+}
+
+
+/* SCROLL ANIMATION */
+
+const observer =
+new IntersectionObserver(
+
+  entries => {
+
+    entries.forEach(entry => {
+
+      if(entry.isIntersecting){
+
+        entry.target.classList.add("visible");
+
+      }
+
+    });
+
+  },
+
+  {
+    threshold:.12
+  }
+
+);
+
+document
+.querySelectorAll(".reveal")
+.forEach(el => {
+
+  observer.observe(el);
+
+});
+
+
+/* FLOATING HEARTS */
+
+function createHeart(){
+
+  const heart =
+  document.createElement("div");
+
+  heart.className = "heart";
+
+  const list =
+  ["❤️","♡","♥","💗"];
+
+  heart.innerText =
+  list[Math.floor(Math.random()*list.length)];
+
+  heart.style.left =
+  Math.random()*100 + "vw";
+
+  heart.style.fontSize =
+  (12 + Math.random()*14) + "px";
+
+  heart.style.animationDuration =
+  (7 + Math.random()*7) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(()=>{
+
+    heart.remove();
+
+  },14000);
+
+}
+
+setInterval(createHeart,1800);
+
+
+/* FORGIVE BUTTON */
+
+function forgive(){
+
+  const response =
+  document.getElementById("response");
+
+  const title =
+  document.getElementById("responseTitle");
+
+  const text =
+  document.getElementById("responseText");
+
+  title.innerHTML =
+  "Thank you ❤️";
+
+  text.innerHTML =
+  "Ab meri baari hai — words se nahi, " +
+  "actions se prove karne ki. " +
+  "Main tumhari feelings ko samajhne aur " +
+  "apni galti repeat na karne ki genuinely koshish karunga.";
+
+  response.classList.add("show");
+
+  for(let i=0;i<15;i++){
+
+    setTimeout(()=>{
+
+      createHeart();
+
+    },i*80);
+
+  }
+
+}
+
+
+/* TIME BUTTON */
+
+function space(){
+
+  const response =
+  document.getElementById("response");
+
+  const title =
+  document.getElementById("responseTitle");
+
+  const text =
+  document.getElementById("responseText");
+
+  title.innerHTML =
+  "Theek hai ❤️";
+
+  text.innerHTML =
+  "Take your time. Main tumhari feelings aur " +
+  "space respect karunga. Jab tum ready feel karo " +
+  "tabhi baat karna.";
+
+  response.classList.add("show");
+
+  response.scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
+
+}
+
+</script>
+
+</body>
+</html>  pointer-events:none;
   z-index:-1;
 }
 
